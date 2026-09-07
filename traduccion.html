@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Viajes Speedy · Traducción ES</title>
+<link rel="stylesheet" href="https://raw.githack.com/emmanuelbarriosxcom-dev/viajes-speedy-dashboards/main/traduccion/app.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">VS</div>
+      <div><b>Viajes Speedy</b><small>Implementación de adaptación ES</small></div>
+    </div>
+    <div class="sidebar-tools">
+      <input class="control" id="search" type="search" placeholder="Buscar página, plantilla o componente…">
+      <select class="control" id="typeFilter">
+        <option value="">Todos los tipos</option>
+        <option value="Componente global / plantilla">Componente global / plantilla</option>
+<option value="Endpoint WooCommerce / snippet PHP">Endpoint WooCommerce / snippet PHP</option>
+<option value="Plantilla">Plantilla</option>
+<option value="Plantilla Archive / snippet PHP">Plantilla Archive / snippet PHP</option>
+<option value="Plantilla dinámica">Plantilla dinámica</option>
+<option value="Plantilla dinámica / snippet PHP">Plantilla dinámica / snippet PHP</option>
+<option value="Página">Página</option>
+<option value="Página WooCommerce / snippet PHP">Página WooCommerce / snippet PHP</option>
+<option value="Página legal">Página legal</option>
+<option value="Página/archivo editorial">Página/archivo editorial</option>
+<option value="Página/categoría">Página/categoría</option>
+<option value="Snippet PHP global">Snippet PHP global</option>
+      </select>
+      <select class="control" id="followFilter">
+        <option value="">Todos los estados</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="colocado">Colocado</option>
+        <option value="probado">Probado</option>
+      </select>
+      <select class="control" id="sourceFilter">
+        <option value="">Toda la cobertura</option>
+        <option value="recuperado">Fuente recuperada</option>
+        <option value="pendiente_fuente">Falta fuente exacta</option>
+        <option value="no_aprobado">No aprobado / pendiente legal</option>
+      </select>
+    </div>
+    <div class="nav-title">PIEZAS DEL PROYECTO</div>
+    <nav class="nav" id="sideNav"></nav>
+    <div class="sidebar-foot">
+      <button class="minibtn" id="exportBtn">Exportar seguimiento JSON</button>
+      <label class="minibtn" style="display:grid;place-items:center;cursor:pointer">Importar seguimiento JSON<input id="importInput" type="file" accept="application/json" hidden></label>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <span class="eyebrow">VIAJES SPEEDY · REDISEÑO ES</span>
+      <h1>Un solo lugar para <em>copiar, pegar y probar.</em></h1>
+      <p>Dashboard de traducción ES publicado desde GitHub. Selecciona una pieza en la izquierda; el código se carga únicamente cuando pulsas «Mostrar código» o «Copiar».</p>
+
+      <div class="stats">
+        <div class="stat"><span>INVENTARIO</span><strong>26</strong></div>
+        <div class="stat ok"><span>FUENTE FINAL RECUPERADA</span><strong>9</strong></div>
+        <div class="stat warn"><span>FALTA FUENTE EXACTA</span><strong>15</strong></div>
+        <div class="stat danger"><span>NO APROBADO / LEGAL</span><strong>2</strong></div>
+      </div>
+
+      <div class="notice"><b>Importante:</b> el seguimiento se guarda solo en este navegador mediante localStorage. No sincroniza con WordPress ni con otros equipos. Las piezas pendientes están etiquetadas como tales y no contienen reconstrucciones presentadas como oficiales.</div>
+    </header>
+
+    <section class="workspace">
+      <article class="piece" id="piece"></article>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast">Copiado</div>
+<script src="https://raw.githack.com/emmanuelbarriosxcom-dev/viajes-speedy-dashboards/main/traduccion/app.js"></script>
+</body>
+</html>
