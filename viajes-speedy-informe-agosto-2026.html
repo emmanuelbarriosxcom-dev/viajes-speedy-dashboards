@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Informe mensual de trabajo digital de Viajes Speedy · Agosto 2026">
+<title>Viajes Speedy · Informe mensual · Agosto 2026</title>
+<style>
+:root{
+  --magenta:#B20353;
+  --gold:#F0B400;
+  --coral:#F1673B;
+  --ink:#14212B;
+  --muted:#66727C;
+  --soft:#F6F7F8;
+  --line:#E5E9EB;
+  --white:#FFFFFF;
+  --green:#1F8A5B;
+  --green-soft:#EAF7F1;
+  --amber:#A86B00;
+  --amber-soft:#FFF5DA;
+  --shadow:0 18px 48px rgba(20,33,43,.08);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#F5F6F7;
+  color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.55;
+}
+a{color:inherit}
+button{font:inherit}
+button{cursor:pointer}
+::selection{background:rgba(178,3,83,.15)}
+.topline{
+  position:fixed;left:0;top:0;z-index:80;height:4px;width:100%;
+  background:linear-gradient(90deg,var(--magenta),var(--coral),var(--gold));
+}
+.progressbar{
+  position:fixed;left:0;top:4px;z-index:79;height:2px;width:0;
+  background:var(--magenta);transition:width .08s linear;
+}
+.app{min-height:100vh}
+.mobilebar{
+  display:none;position:sticky;top:0;z-index:70;
+  padding:12px 16px;border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.94);backdrop-filter:blur(14px);
+  align-items:center;justify-content:space-between;
+}
+.mobilebar strong{font-size:13px}
+.menu-btn{
+  width:42px;height:42px;border:1px solid var(--line);border-radius:12px;
+  background:white;color:var(--ink);font-weight:900
+}
+.sidebar{
+  position:fixed;inset:0 auto 0 0;z-index:60;
+  width:255px;padding:28px 18px 24px;overflow:auto;
+  background:#FFFFFF;border-right:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:12px;padding:2px 8px 18px}
+.brand img{width:68px;height:46px;object-fit:contain}
+.brand-copy strong{display:block;font-size:14px;letter-spacing:-.02em}
+.brand-copy small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.nav-label{
+  margin:16px 10px 8px;color:#929BA1;font-size:9px;
+  font-weight:900;letter-spacing:.12em;text-transform:uppercase
+}
+.nav{display:grid;gap:3px}
+.nav a{
+  padding:10px;border-radius:11px;text-decoration:none;color:#56636B;
+  font-size:12px;font-weight:750;transition:.2s ease
+}
+.nav a:hover,.nav a.active{background:var(--soft);color:var(--magenta)}
+.side-tools{display:grid;gap:8px;margin:20px 8px 0}
+.btn{
+  min-height:42px;border:0;border-radius:11px;padding:0 13px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-size:11px;font-weight:850;transition:.2s ease
+}
+.btn-primary{background:var(--magenta);color:white}
+.btn-primary:hover{background:var(--ink);transform:translateY(-1px)}
+.btn-secondary{background:white;color:var(--ink);border:1px solid var(--line)}
+.btn-secondary:hover{border-color:var(--magenta);color:var(--magenta)}
+main{margin-left:255px}
+.page{max-width:1180px;margin:0 auto;padding:0 40px 90px}
+section{scroll-margin-top:24px}
+.hero{
+  min-height:92vh;padding:74px 0 54px;display:grid;align-items:center;position:relative;overflow:hidden
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border-radius:999px;pointer-events:none
+}
+.hero:before{width:460px;height:460px;right:-210px;top:9%;border:72px solid rgba(178,3,83,.07)}
+.hero:after{width:280px;height:280px;left:8%;bottom:-200px;border:42px solid rgba(240,180,0,.14)}
+.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:38px;align-items:center;position:relative;z-index:2}
+.eyebrow{
+  color:var(--magenta);font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase
+}
+.hero h1{
+  margin:14px 0 20px;max-width:850px;font-size:clamp(46px,6.5vw,86px);
+  line-height:.95;letter-spacing:-.065em;font-weight:900
+}
+.hero h1 em{display:block;color:var(--magenta);font-style:normal}
+.hero-copy{max-width:720px;color:#526069;font-size:17px;line-height:1.75}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{
+  display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;
+  background:white;border:1px solid var(--line);font-size:10px;font-weight:780;color:#536069
+}
+.chip:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.hero-card{
+  position:relative;padding:28px;border-radius:27px;color:white;overflow:hidden;
+  background:linear-gradient(145deg,#14212B 0%,#1C303D 100%);box-shadow:var(--shadow)
+}
+.hero-card:after{
+  content:"";position:absolute;width:210px;height:210px;border-radius:50%;
+  right:-90px;top:-95px;background:rgba(178,3,83,.18)
+}
+.hero-card small{position:relative;z-index:2;color:var(--gold);font-size:9px;font-weight:900;letter-spacing:.12em}
+.hero-card h2{
+  position:relative;z-index:2;margin:10px 0 22px;font-size:31px;line-height:1.05;letter-spacing:-.04em
+}
+.hero-card ul{position:relative;z-index:2;margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.hero-card li{
+  display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;
+  padding:11px 0;border-top:1px solid rgba(255,255,255,.10);font-size:12px;color:rgba(255,255,255,.77)
+}
+.hero-card li span{
+  width:27px;height:27px;border-radius:8px;display:grid;place-items:center;
+  background:rgba(240,180,0,.13);color:var(--gold);font-size:9px;font-weight:900
+}
+.section{padding:78px 0 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:28px}
+.section-title{max-width:760px}
+.section h2{
+  margin:7px 0 0;font-size:clamp(34px,4.3vw,54px);line-height:1.03;
+  letter-spacing:-.052em;font-weight:880
+}
+.section h2 em{font-style:normal;color:var(--magenta)}
+.lead{max-width:620px;color:var(--muted);font-size:14px;line-height:1.7}
+.grid{display:grid;gap:16px}
+.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{
+  padding:22px;border:1px solid var(--line);border-radius:18px;background:white;
+  box-shadow:0 7px 24px rgba(20,33,43,.035)
+}
+.card h3{margin:9px 0 8px;font-size:17px;line-height:1.2;letter-spacing:-.025em}
+.card p{margin:0;color:var(--muted);font-size:12px;line-height:1.62}
+.status{
+  display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 8px;border-radius:999px;
+  font-size:8px;font-weight:900;letter-spacing:.08em;text-transform:uppercase
+}
+.status:before{content:"";width:6px;height:6px;border-radius:50%}
+.status.done{background:var(--green-soft);color:var(--green)}
+.status.done:before{background:var(--green)}
+.status.progress{background:var(--amber-soft);color:var(--amber)}
+.status.progress:before{background:var(--gold)}
+.status.next{background:#F3EAF0;color:var(--magenta)}
+.status.next:before{background:var(--magenta)}
+.metric .big{
+  display:block;margin:10px 0 7px;font-size:28px;line-height:1;font-weight:900;letter-spacing:-.04em
+}
+.metric strong{display:block;font-size:12px;margin-bottom:5px}
+.notice{
+  margin-top:18px;padding:18px 20px;border:1px solid rgba(178,3,83,.13);border-radius:15px;
+  background:linear-gradient(135deg,rgba(178,3,83,.045),rgba(240,180,0,.06))
+}
+.notice strong{display:block;font-size:12px;margin-bottom:4px}
+.notice p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}
+.work-list{display:grid;gap:12px}
+.work{
+  border:1px solid var(--line);border-radius:17px;background:white;overflow:hidden
+}
+.work summary{
+  min-height:76px;padding:17px 18px;display:grid;grid-template-columns:42px 1fr auto;
+  gap:13px;align-items:center;list-style:none;cursor:pointer
+}
+.work summary::-webkit-details-marker{display:none}
+.work-num{
+  width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+  background:rgba(178,3,83,.07);color:var(--magenta);font-size:9px;font-weight:900
+}
+.work summary h3{margin:0;font-size:15px;line-height:1.2}
+.work summary p{margin:4px 0 0;color:var(--muted);font-size:11px}
+.work summary .plus{
+  width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+  background:var(--soft);color:var(--magenta);font-weight:900;transition:.2s
+}
+.work[open] summary .plus{transform:rotate(45deg);background:var(--magenta);color:white}
+.work-body{
+  padding:0 18px 18px 73px;display:grid;grid-template-columns:1fr 1fr;gap:13px
+}
+.work-body div{padding:14px;border-radius:13px;background:var(--soft)}
+.work-body b{display:block;font-size:9px;color:var(--magenta);letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px}
+.work-body span{display:block;color:#536069;font-size:11px;line-height:1.55}
+.impact{
+  position:relative;overflow:hidden;min-height:170px
+}
+.impact:after{
+  content:"";position:absolute;width:100px;height:100px;border-radius:50%;
+  right:-42px;bottom:-48px;background:rgba(178,3,83,.06)
+}
+.impact .icon{
+  width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+  background:var(--ink);color:var(--gold);font-weight:900;font-size:12px
+}
+.timeline{display:grid;gap:12px}
+.phase{
+  display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:start;
+  padding:19px;border:1px solid var(--line);border-radius:17px;background:white
+}
+.phase-tag{font-size:9px;font-weight:900;letter-spacing:.08em;color:var(--magenta);text-transform:uppercase}
+.phase h3{margin:0 0 5px;font-size:15px}
+.phase p{margin:0;color:var(--muted);font-size:11px;line-height:1.6}
+.priority{
+  display:inline-flex;align-items:center;justify-content:center;min-width:82px;min-height:29px;
+  padding:0 9px;border-radius:999px;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.07em
+}
+.priority.high{background:var(--green-soft);color:var(--green)}
+.priority.medium{background:var(--amber-soft);color:var(--amber)}
+.priority.flex{background:#F3EAF0;color:var(--magenta)}
+.kpi-card{
+  padding:18px;border-radius:16px;border:1px solid var(--line);background:white
+}
+.kpi-card small{display:block;color:var(--magenta);font-size:8px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+.kpi-card strong{display:block;margin:7px 0 5px;font-size:14px}
+.kpi-card p{margin:0;color:var(--muted);font-size:10px;line-height:1.55}
+.closing{
+  margin-top:80px;padding:34px;border-radius:24px;text-align:center;color:white;
+  background:linear-gradient(135deg,var(--ink),#203743);box-shadow:var(--shadow)
+}
+.closing span{color:var(--gold);font-size:9px;font-weight:900;letter-spacing:.11em}
+.closing h2{max-width:760px;margin:10px auto;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.045em}
+.closing p{max-width:680px;margin:0 auto;color:rgba(255,255,255,.72);font-size:12px;line-height:1.7}
+footer{padding:38px 0 0;text-align:center;color:#889298;font-size:10px}
+.reusable{
+  margin-top:26px;padding:15px 17px;border:1px dashed #CBD2D6;border-radius:14px;background:#FAFBFB;
+  color:#657079;font-size:10px;line-height:1.55
+}
+.hidden-detail .detail-only{display:none!important}
+@media(max-width:1024px){
+  .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-grid{grid-template-columns:1fr}
+  .hero{min-height:auto}
+}
+@media(max-width:820px){
+  .mobilebar{display:flex}
+  .sidebar{transform:translateX(-102%);width:min(300px,88vw);transition:.25s ease;box-shadow:var(--shadow)}
+  .sidebar.open{transform:translateX(0)}
+  main{margin-left:0}
+  .page{padding:0 20px 70px}
+  .section-head{display:block}
+  .section-head .lead{margin-top:12px}
+}
+@media(max-width:650px){
+  .page{padding-left:15px;padding-right:15px}
+  .hero{padding-top:64px}
+  .hero h1{font-size:47px}
+  .grid-4,.grid-3,.grid-2{grid-template-columns:1fr}
+  .work-body{grid-template-columns:1fr;padding-left:18px}
+  .phase{grid-template-columns:1fr;gap:9px}
+  .priority{justify-self:start}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition:none!important}
+}
+@media print{
+  @page{size:A4;margin:14mm}
+  body{background:white}
+  .sidebar,.mobilebar,.topline,.progressbar,.no-print{display:none!important}
+  main{margin-left:0}
+  .page{max-width:none;padding:0}
+  .hero{min-height:0;padding:10mm 0 14mm;page-break-after:always}
+  .hero-grid{grid-template-columns:1.15fr .85fr}
+  .section{padding-top:11mm;break-inside:avoid}
+  .card,.work,.phase,.notice,.closing{break-inside:avoid;box-shadow:none}
+  .work[open] .work-body{display:grid}
+  .detail-only{display:block!important}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="topline" aria-hidden="true"></div>
+<div class="progressbar" id="progressBar" aria-hidden="true"></div>
+
+<header class="mobilebar">
+  <strong>Viajes Speedy · Agosto 2026</strong>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir navegación">☰</button>
+</header>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Navegación del informe">
+    <div class="brand">
+      <img src="https://www.viajespeedy.com/wp-content/uploads/2023/06/cropped-Untitled-design-1.png" alt="Viajes Speedy" onerror="this.style.display='none'">
+      <div class="brand-copy"><strong>Viajes Speedy</strong><small>Informe mensual · Agosto 2026</small></div>
+    </div>
+    <div class="nav-label">Informe</div>
+    <nav class="nav" id="nav">
+      <a href="#portada">Portada</a>
+      <a href="#resumen">Resumen</a>
+      <a href="#agosto">Trabajo realizado</a>
+      <a href="#impacto">Qué buscamos lograr</a>
+      <a href="#septiembre">Plan de septiembre</a>
+      <a href="#medicion">Qué mediremos</a>
+    </nav>
+    <div class="side-tools no-print">
+      <button class="btn btn-primary" onclick="window.print()">Imprimir / Guardar PDF</button>
+      <button class="btn btn-secondary" id="detailToggle">Ocultar detalles</button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="page">
+
+      <section class="hero" id="portada">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow">Informe mensual · Agosto 2026</span>
+            <h1>La nueva base de <em>Viajes Speedy.</em></h1>
+            <p class="hero-copy">
+              Durante agosto el foco estuvo en transformar la web en una experiencia más clara,
+              moderna y preparada para convertir visitas en consultas y reservas. Este informe resume
+              qué se trabajó, para qué sirve y qué sigue en septiembre.
+            </p>
+            <div class="hero-meta">
+              <span class="chip">WordPress + Elementor</span>
+              <span class="chip">WooCommerce</span>
+              <span class="chip">WPML</span>
+              <span class="chip">SEO + UX + conversión</span>
+            </div>
+            <p style="margin-top:18px;color:#8B959B;font-size:10px">
+              Preparado por Emmanuel Barrios / Cubo SEO para Viajes Speedy.
+            </p>
+          </div>
+
+          <aside class="hero-card">
+            <small>EN UNA FRASE</small>
+            <h2>Agosto fue el mes de construir la base.</h2>
+            <ul>
+              <li><span>01</span><div>Nueva experiencia visual y navegación.</div></li>
+              <li><span>02</span><div>Mejor estructura para tours, artículos y reservas.</div></li>
+              <li><span>03</span><div>Base preparada para SEO, medición y versión española.</div></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="resumen">
+        <div class="section-head">
+          <div class="section-title">
+            <span class="eyebrow">Resumen ejecutivo</span>
+            <h2>Qué cambió <em>durante agosto.</em></h2>
+          </div>
+          <p class="lead">
+            El trabajo no se centró en “hacer la web más bonita”. Se reorganizó la experiencia para
+            que el viajero entienda mejor la oferta, confíe más y tenga caminos claros hacia contacto o reserva.
+          </p>
+        </div>
+
+        <div class="grid grid-4">
+          <article class="card metric">
+            <span class="status done">Completado</span>
+            <span class="big">EN</span>
+            <strong>Rediseño principal</strong>
+            <p>La nueva base visual y de navegación quedó desarrollada en la versión inglesa.</p>
+          </article>
+          <article class="card metric">
+            <span class="status done">Completado</span>
+            <span class="big">UX</span>
+            <strong>Flujos de reserva</strong>
+            <p>Se mejoraron las pantallas que acompañan al usuario desde el tour hasta la confirmación.</p>
+          </article>
+          <article class="card metric">
+            <span class="status done">Completado</span>
+            <span class="big">SEO</span>
+            <strong>Estructura y arquitectura</strong>
+            <p>Se definió una base más ordenada para categorías, tours, contenidos e intención de búsqueda.</p>
+          </article>
+          <article class="card metric">
+            <span class="status progress">En curso</span>
+            <span class="big">ES</span>
+            <strong>Adaptación bilingüe</strong>
+            <p>La estructura está preparada para trasladar el nuevo sistema a español durante septiembre.</p>
+          </article>
+        </div>
+
+        <div class="notice">
+          <strong>Importante sobre resultados</strong>
+          <p>
+            Agosto fue principalmente un mes de construcción y corrección. Todavía no presentamos crecimiento de tráfico
+            o conversiones como resultado atribuible al trabajo porque la medición avanzada se configurará en septiembre.
+            A partir de ahí podremos comparar datos mes a mes con mayor precisión.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="agosto">
+        <div class="section-head">
+          <div class="section-title">
+            <span class="eyebrow">Trabajo realizado</span>
+            <h2>Lo que se hizo y <em>para qué sirve.</em></h2>
+          </div>
+          <p class="lead">Haz clic en cada bloque para ver una explicación breve y no técnica.</p>
+        </div>
+
+        <div class="work-list">
+
+          <details class="work" open>
+            <summary>
+              <span class="work-num">01</span>
+              <div><h3>Sistema visual, header y footer</h3><p>Nueva base de navegación, marca y confianza.</p></div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="work-body detail-only">
+              <div><b>Qué se hizo</b><span>Se rediseñaron header y footer con identidad de Viajes Speedy, navegación más clara, accesos a tours, contacto, ayuda, pagos, idioma y carrito.</span></div>
+              <div><b>Qué buscamos</b><span>Que el usuario se ubique rápido, encuentre el tipo de experiencia que busca y tenga siempre un siguiente paso visible.</span></div>
+            </div>
+          </details>
+
+          <details class="work" open>
+            <summary>
+              <span class="work-num">02</span>
+              <div><h3>Homepage y páginas principales</h3><p>Una experiencia más organizada para descubrir, confiar y avanzar.</p></div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="work-body detail-only">
+              <div><b>Qué se hizo</b><span>Se reconstruyó la experiencia de Home y páginas clave como About, Contact, Blog, Help / FAQs y Payment Methods, con una dirección visual consistente.</span></div>
+              <div><b>Qué buscamos</b><span>Explicar mejor quién es Viajes Speedy, qué ofrece y cómo puede ayudar al viajero antes de pedirle que reserve.</span></div>
+            </div>
+          </details>
+
+          <details class="work" open>
+            <summary>
+              <span class="work-num">03</span>
+              <div><h3>Categorías de tours y descubrimiento</h3><p>Mejor organización de la oferta.</p></div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="work-body detail-only">
+              <div><b>Qué se hizo</b><span>Se trabajaron páginas para experiencias como Machu Picchu, tours tradicionales, cuatrimotos, caminatas y tours destacados, conectando mejor categorías y productos.</span></div>
+              <div><b>Qué buscamos</b><span>Facilitar que el viajero compare opciones sin sentirse perdido entre demasiadas páginas o categorías antiguas.</span></div>
+            </div>
+          </details>
+
+          <details class="work" open>
+            <summary>
+              <span class="work-num">04</span>
+              <div><h3>Plantilla individual de tour</h3><p>El producto pasa a ser una página de decisión.</p></div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="work-body detail-only">
+              <div><b>Qué se hizo</b><span>Se rediseñó la vista de cada tour para presentar mejor imágenes, precio, fechas, viajeros, itinerario, inclusiones, preguntas, pagos, WhatsApp y experiencias relacionadas.</span></div>
+              <div><b>Qué buscamos</b><span>Reducir dudas antes de reservar y hacer que cada tour comunique valor, información y confianza de forma consistente.</span></div>
+            </div>
+          </details>
+
+          <details class="work" open>
+            <summary>
+              <span class="work-num">05</span>
+              <div><h3>Carrito, checkout, cuenta y confirmación</h3><p>Mejora del camino transaccional.</p></div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="work-body detail-only">
+              <div><b>Qué se hizo</b><span>Se adaptaron las pantallas de carrito, checkout, Mi cuenta y confirmación de reserva, manteniendo la funcionalidad nativa de WooCommerce y los métodos de pago.</span></div>
+              <div><b>Qué buscamos</b><span>Disminuir fricción justo en el momento más importante: cuando el usuario decide avanzar con una reserva.</span></div>
+            </div>
+          </details>
+
+          <details class="work" open>
+            <summary>
+              <span class="work-num">06</span>
+              <div><h3>Blog y plantilla de artículos</h3><p>Contenido preparado para atraer y convertir.</p></div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="work-body detail-only">
+              <div><b>Qué se hizo</b><span>Se creó una estructura editorial más limpia para el blog y los artículos individuales, con tabla de contenidos, enlaces internos, llamados a la acción y contenido relacionado.</span></div>
+              <div><b>Qué buscamos</b><span>Que los artículos no solo informen: también deben ayudar al usuario a descubrir tours y avanzar hacia una consulta o reserva.</span></div>
+            </div>
+          </details>
+
+          <details class="work" open>
+            <summary>
+              <span class="work-num">07</span>
+              <div><h3>Arquitectura SEO y preparación bilingüe</h3><p>Una base más escalable para Google y la versión española.</p></div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="work-body detail-only">
+              <div><b>Qué se hizo</b><span>Se organizaron temas, categorías, páginas principales, enlaces internos y criterios de traducción para reducir duplicidad y preparar una estructura más clara.</span></div>
+              <div><b>Qué buscamos</b><span>Evitar que distintas páginas compitan entre sí y facilitar que Google entienda qué página debe posicionarse para cada tipo de búsqueda.</span></div>
+            </div>
+          </details>
+
+          <details class="work" open>
+            <summary>
+              <span class="work-num">08</span>
+              <div><h3>Responsive, consistencia y QA</h3><p>El sistema debe funcionar más allá de una sola pantalla.</p></div>
+              <span class="plus">+</span>
+            </summary>
+            <div class="work-body detail-only">
+              <div><b>Qué se hizo</b><span>Se revisaron comportamientos en escritorio, tablet y móvil, estados hover, espaciados, botones y componentes dinámicos para conservar coherencia visual.</span></div>
+              <div><b>Qué buscamos</b><span>Que el sitio se sienta como una sola marca y no como páginas construidas en momentos diferentes.</span></div>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <section class="section" id="impacto">
+        <div class="section-head">
+          <div class="section-title">
+            <span class="eyebrow">Qué buscamos lograr</span>
+            <h2>La lógica detrás del <em>rediseño.</em></h2>
+          </div>
+          <p class="lead">Estas son las mejoras que queremos convertir en resultados medibles durante los próximos meses.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card impact"><span class="icon">01</span><h3>Más claridad</h3><p>Que el viajero entienda rápidamente qué puede reservar, qué incluye y cómo avanzar.</p></article>
+          <article class="card impact"><span class="icon">02</span><h3>Más confianza</h3><p>Información, contacto, pagos y navegación presentados de forma coherente y profesional.</p></article>
+          <article class="card impact"><span class="icon">03</span><h3>Menos fricción</h3><p>Reducir pasos confusos entre descubrir un tour, consultar, seleccionar fechas y reservar.</p></article>
+          <article class="card impact"><span class="icon">04</span><h3>Mejor base SEO</h3><p>Una estructura que permita trabajar palabras clave, contenidos, enlazado y páginas de destino con mayor orden.</p></article>
+          <article class="card impact"><span class="icon">05</span><h3>Contenido que acompaña la venta</h3><p>Los artículos deben responder dudas reales y conducir a experiencias relacionadas.</p></article>
+          <article class="card impact"><span class="icon">06</span><h3>Un sistema escalable</h3><p>Plantillas reutilizables para mantener la web consistente al añadir tours, contenidos o idiomas.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="septiembre">
+        <div class="section-head">
+          <div class="section-title">
+            <span class="eyebrow">Plan de acción · Septiembre</span>
+            <h2>Prioridades para <em>cerrar la base.</em></h2>
+          </div>
+          <p class="lead">
+            El objetivo de septiembre no es abrir demasiados frentes. Primero cerramos la versión española,
+            medimos correctamente y auditamos lo que ya existe.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="phase">
+            <div class="phase-tag">Prioridad 01</div>
+            <div><h3>Finalizar el rediseño en español</h3><p>Trasladar y validar las nuevas páginas y plantillas en WPML, revisar enlaces, textos, navegación, blog, contacto, pagos y experiencias.</p></div>
+            <span class="priority high">Principal</span>
+          </article>
+
+          <article class="phase">
+            <div class="phase-tag">Prioridad 02</div>
+            <div><h3>Configurar medición: GA4, Search Console y eventos</h3><p>Dejar lista la base para medir clics a WhatsApp, formularios, vistas de tours, añadir al carrito, inicio de checkout y reservas / compras cuando aplique.</p></div>
+            <span class="priority high">Principal</span>
+          </article>
+
+          <article class="phase">
+            <div class="phase-tag">Prioridad 03</div>
+            <div><h3>Auditoría SEO y limpieza de la web</h3><p>Revisar páginas antiguas, duplicadas, contenido que compite por lo mismo, indexación, categorías heredadas y URLs que conviene conservar, redirigir o retirar.</p></div>
+            <span class="priority high">Principal</span>
+          </article>
+
+          <article class="phase">
+            <div class="phase-tag">Prioridad 04</div>
+            <div><h3>Empezar a normalizar los tours existentes</h3><p>Ordenar primero los tours prioritarios: títulos, descripciones, itinerarios, inclusiones, duración, ubicaciones, imágenes y datos necesarios para la reserva.</p></div>
+            <span class="priority medium">En paralelo</span>
+          </article>
+
+          <article class="phase">
+            <div class="phase-tag">Prioridad 05</div>
+            <div><h3>Análisis de contenidos y oportunidades SEO</h3><p>Definir temas, búsquedas y grupos de contenido que tengan sentido para Machu Picchu, Cusco, Valle Sagrado, aventura y planificación de viajes.</p></div>
+            <span class="priority medium">En paralelo</span>
+          </article>
+
+          <article class="phase">
+            <div class="phase-tag">Opcional</div>
+            <div><h3>Publicar los primeros contenidos nuevos</h3><p>Si el cierre técnico y la auditoría avanzan según lo previsto, empezar con los primeros artículos priorizados. No se plantea como promesa si compromete las tareas principales.</p></div>
+            <span class="priority flex">Si hay capacidad</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="medicion">
+        <div class="section-head">
+          <div class="section-title">
+            <span class="eyebrow">A partir de septiembre</span>
+            <h2>Qué vamos a empezar a <em>medir.</em></h2>
+          </div>
+          <p class="lead">
+            Una vez configurada la analítica, los siguientes reportes ya podrán combinar trabajo realizado con datos de comportamiento y SEO.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="kpi-card"><small>Visibilidad</small><strong>Google Search Console</strong><p>Clics, impresiones, consultas, páginas y evolución orgánica.</p></article>
+          <article class="kpi-card"><small>Tráfico</small><strong>Google Analytics 4</strong><p>Usuarios, sesiones, canales, páginas de entrada y comportamiento.</p></article>
+          <article class="kpi-card"><small>Intención comercial</small><strong>Interacciones clave</strong><p>WhatsApp, formularios, búsquedas internas y navegación hacia tours.</p></article>
+          <article class="kpi-card"><small>Reserva</small><strong>Embudo WooCommerce</strong><p>Tour visto → carrito → checkout → reserva o compra cuando el flujo lo permita.</p></article>
+          <article class="kpi-card"><small>SEO</small><strong>Salud del sitio</strong><p>Indexación, duplicidad, canibalización, errores y páginas que requieren acción.</p></article>
+          <article class="kpi-card"><small>Contenido</small><strong>Rendimiento editorial</strong><p>Qué guías atraen usuarios y cuáles ayudan a llevarlos hacia una experiencia.</p></article>
+        </div>
+
+        <div class="reusable">
+          <strong>Esta es la plantilla mensual base.</strong>
+          En los próximos informes se conservará el mismo diseño y estructura: resumen ejecutivo → trabajo realizado →
+          impacto / resultados → métricas → incidencias → plan del siguiente mes. Cambiará el contenido, no el sistema visual.
+        </div>
+      </section>
+
+      <section class="closing">
+        <span>SIGUIENTE ETAPA</span>
+        <h2>Septiembre cierra la transición y prepara la web para medir crecimiento.</h2>
+        <p>
+          La prioridad inmediata es terminar la experiencia en español, auditar la arquitectura existente y dejar
+          configurada la medición. Con esa base podremos tomar decisiones mensuales con datos reales y empezar a escalar SEO y contenidos con más seguridad.
+        </p>
+      </section>
+
+      <footer>
+        Viajes Speedy · Informe mensual de trabajo digital · Agosto 2026 · Emmanuel Barrios / Cubo SEO
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<script>
+(function(){
+  var sidebar=document.getElementById('sidebar');
+  var menuBtn=document.getElementById('menuBtn');
+  var detailToggle=document.getElementById('detailToggle');
+  var navLinks=[].slice.call(document.querySelectorAll('#nav a'));
+  var sections=navLinks.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  var progress=document.getElementById('progressBar');
+
+  if(menuBtn){
+    menuBtn.addEventListener('click',function(){
+      var open=sidebar.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',String(open));
+    });
+  }
+
+  navLinks.forEach(function(link){
+    link.addEventListener('click',function(){
+      sidebar.classList.remove('open');
+      if(menuBtn)menuBtn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  function sync(){
+    var doc=document.documentElement;
+    var max=doc.scrollHeight-window.innerHeight;
+    var pct=max>0?(window.scrollY/max)*100:0;
+    progress.style.width=Math.max(0,Math.min(100,pct))+'%';
+
+    var current=sections[0];
+    sections.forEach(function(s){
+      if(s.getBoundingClientRect().top<180)current=s;
+    });
+    navLinks.forEach(function(a){
+      a.classList.toggle('active',current && a.getAttribute('href')==='#'+current.id);
+    });
+  }
+
+  window.addEventListener('scroll',sync,{passive:true});
+  sync();
+
+  if(detailToggle){
+    detailToggle.addEventListener('click',function(){
+      var hidden=document.body.classList.toggle('hidden-detail');
+      detailToggle.textContent=hidden?'Mostrar detalles':'Ocultar detalles';
+    });
+  }
+})();
+</script>
+</body>
+</html>
