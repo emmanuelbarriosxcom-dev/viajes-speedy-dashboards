@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Informe mensual de trabajo digital de Viajes Speedy · Agosto 2026">
+<title>Viajes Speedy · Informe mensual · Agosto 2026</title>
+<script>
+(async()=>{
+ const base='informe-agosto-2026/';
+ const get=async f=>(await fetch(base+f)).text();
+ const css=(await Promise.all(['css1.txt','css2.txt','css3.txt'].map(get))).join('');
+ const body=(await Promise.all(['body1.txt','body2.txt','body3.txt','body4.txt'].map(get))).join('');
+ const style=document.createElement('style'); style.textContent=css; document.head.appendChild(style);
+ document.body.innerHTML=body;
+ const js=await get('app.js');
+ const script=document.createElement('script'); script.textContent=js; document.body.appendChild(script);
+})().catch(err=>{document.body.innerHTML='<p style="font-family:sans-serif;padding:24px">No se pudo cargar el informe.</p>';console.error(err);});
+</script>
+</head>
+<body></body>
+</html>
