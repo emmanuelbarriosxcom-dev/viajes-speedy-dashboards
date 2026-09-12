@@ -1,7 +1,0 @@
-PLAN DE ACCIÓN · SEPTIEMBRE
-Principal | Finalizar el rediseño en español | Validar páginas y plantillas WPML, enlaces, textos, navegación, blog, contacto, pagos y experiencias.
-Principal | Configurar GA4, Search Console y eventos | Medir WhatsApp, formularios, vistas de tours, carrito, checkout y reservas cuando aplique.
-Principal | Auditoría SEO y limpieza | Revisar páginas antiguas, duplicadas, canibalización, indexación y URLs a conservar, redirigir o retirar.
-En paralelo | Normalizar tours existentes | Ordenar títulos, descripciones, itinerarios, inclusiones, duración, ubicaciones, imágenes y datos de reserva.
-En paralelo | Análisis de contenidos y oportunidades SEO | Definir temas y búsquedas para Machu Picchu, Cusco, Valle Sagrado, aventura y planificación.
-Si hay capacidad | Publicar primeros contenidos nuevos | Si el cierre técnico y la auditoría avanzan bien, comenzar con artículos priorizados.
